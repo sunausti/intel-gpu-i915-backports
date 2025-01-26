@@ -1,7 +1,8 @@
 CFLAGS=-Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer
-LEX = flex
-override CC = $(BUILD_CCLD)
-override LD = $(BUILD_LD)
+LEX = /usr/bin/flex
+YACC= /usr/bin/yacc
+# override CC = $(BUILD_CCLD)
+# override LD = $(BUILD_LD)
 
 LXDIALOG := lxdialog/checklist.o lxdialog/inputbox.o lxdialog/menubox.o lxdialog/textbox.o lxdialog/util.o lxdialog/yesno.o
 
