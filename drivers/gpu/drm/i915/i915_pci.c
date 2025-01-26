@@ -1317,6 +1317,7 @@ static const struct intel_device_info mtl_info = {
  * PCI ID matches, otherwise we'll use the wrong info struct above.
  */
 static const struct pci_device_id pciidlist[] = {
+/*
 	INTEL_I830_IDS(&i830_info),
 	INTEL_I845G_IDS(&i845g_info),
 	INTEL_I85X_IDS(&i85x_info),
@@ -1338,7 +1339,7 @@ static const struct pci_device_id pciidlist[] = {
 	INTEL_SNB_D_GT2_IDS(&snb_d_gt2_info),
 	INTEL_SNB_M_GT1_IDS(&snb_m_gt1_info),
 	INTEL_SNB_M_GT2_IDS(&snb_m_gt2_info),
-	INTEL_IVB_Q_IDS(&ivb_q_info), /* must be first IVB */
+	INTEL_IVB_Q_IDS(&ivb_q_info),
 	INTEL_IVB_M_GT1_IDS(&ivb_m_gt1_info),
 	INTEL_IVB_M_GT2_IDS(&ivb_m_gt2_info),
 	INTEL_IVB_D_GT1_IDS(&ivb_d_gt1_info),
@@ -1385,12 +1386,13 @@ static const struct pci_device_id pciidlist[] = {
 	INTEL_ADLS_IDS(&adl_s_info),
 	INTEL_ADLP_IDS(&adl_p_info),
 	INTEL_ADLN_IDS(&adl_p_info),
-	INTEL_DG1_IDS(&dg1_info),
 	INTEL_RPLS_IDS(&adl_s_info),
 	INTEL_RPLP_IDS(&adl_p_info),
+	INTEL_MTL_IDS(&mtl_info),
+*/
+	INTEL_DG1_IDS(&dg1_info),
 	INTEL_DG2_IDS(&dg2_info),
 	INTEL_ATS_M_IDS(&ats_m_info),
-	INTEL_MTL_IDS(&mtl_info),
 	INTEL_PVC_IDS(&pvc_info),
 	{0, 0, 0}
 };

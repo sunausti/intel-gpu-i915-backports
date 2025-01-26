@@ -1,0 +1,11 @@
+0001-Makefile-Add-support-to-update-Kconfig.versions-with.patch
+0002-dkms-build-chages-for-i915_ag-kernel-module.patch
+0003-dkms-driver-chages-for-i915_ag-kernel-module.patch
+0004-dkms-kconfig-chages-for-i915_ag-kernel-module.patch
+0005-dkms-update-dg2-guc-firmware-version.patch
+0006-dkms-huc-remove-CPTCFG_INTEL_MEI_PXP-CPTCFG_INTEL_ME.patch
+0007-Avoid-redefinition-of-pci_dev_is_disconnected.patch
+0008-dkms-add-A760A-deviceID.patch
+0001-drm-i915-Add-deviceptr-ioctl-for-importing-lmem-obje.patch
+0002-drm-i915-Share-local-memory-object-with-virtio-GPU.patch
+0003-drm-i915-lmem-dmabuf-export-support-for-buffer-shari.patch

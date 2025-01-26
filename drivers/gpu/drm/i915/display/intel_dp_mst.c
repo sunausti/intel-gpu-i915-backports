@@ -229,7 +229,7 @@ static int intel_dp_mst_compute_config(struct intel_encoder *encoder,
 	pipe_config->has_pch_encoder = false;
 
 	if (intel_conn_state->force_audio == HDMI_AUDIO_AUTO)
-		pipe_config->has_audio = connector->port->has_audio;
+		pipe_config->has_audio = connector->base.display_info.has_audio;
 	else
 		pipe_config->has_audio =
 			intel_conn_state->force_audio == HDMI_AUDIO_ON;
@@ -445,7 +445,7 @@ intel_dp_mst_atomic_check(struct drm_connector *connector,
 	}
 
 	mgr = &enc_to_mst(to_intel_encoder(old_conn_state->best_encoder))->primary->dp.mst_mgr;
-	ret = drm_dp_atomic_release_vcpi_slots(&state->base, mgr,
+	ret = drm_dp_atomic_release_time_slots(&state->base, mgr,
 					       intel_connector->port);
 
 	return ret;

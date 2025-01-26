@@ -14,7 +14,7 @@
 #define BPM_DRM_DP_MST_HPD_IRQ_IS_NOT_PRESENT
 #endif
 
-#if (LINUX_VERSION_IS_GEQ(6,2,0))
+#if (LINUX_VERSION_IS_GEQ(6,1,59))
 /*
  * 4b21d25bf519c9
  *  overflow: Introduce overflows_type() and castable_to_type()
@@ -26,18 +26,6 @@
  * drm/ttm: rework on ttm_resource to use size_t type
  */
 #define BPM_STRUCT_TTM_RESOURCE_NUM_PAGES_NOT_PRESENT
-
-/*
- * 3c202d14a9d73
- * prandom: remove prandom_u32_max()
- */
-#define BPM_PRANDOM_U32_MAX_NOT_PRESENT
-
-/*
- * 6e1ca48d0669b
- * folio-compat: remove lru_cache_add()
- */
-#define BPM_LRU_CACHE_ADD_API_NOT_PRESENT
 
 /*
  * afb0ff78c13c51
@@ -608,12 +596,6 @@
  * 9299148acf5422 VFIO - SR-IOV VF migration
  */
 #define BPM_VFIO_SR_IOV_VF_MIGRATION_NOT_PRESENT
-
-/*
- * Introduced in DII_6885
- * 55aab652a8a5 Backport DSC YUV420 patches
- */
-#define BPM_DRM_DP_DSC_SINK_SUPPORTS_FORMAT_NOT_PRESENT
 
 #if IS_ENABLED(CONFIG_AUXILIARY_BUS)
 /* 

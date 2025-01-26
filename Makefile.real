@@ -41,6 +41,10 @@ defconfig-%::
 	@$(MAKE) -C kconf conf
 	@./kconf/conf --defconfig=defconfigs/$(@:defconfig-%=%) Kconfig
 
+defconfig-i915:
+	@$(MAKE) -C kconf conf
+	@./kconf/conf --defconfig=defconfigs/i915 Kconfig
+
 .config:
 	@test -f defconfig && $(MAKE) usedefconfig || (			\
 	echo "/--------------"						;\
@@ -57,7 +61,7 @@ defconfig-%::
 	echo "\--"							;\
 	false )
 
-backport-include/backport/autoconf.h: .config Kconfig.versions Kconfig.kernel
+backport-include/backport/autoconf.h: defconfig-i915 Kconfig.versions Kconfig.kernel
 	@$(MAKE) oldconfig
 	@echo -n "Building backport-include/backport/autoconf.h ..."
 	@grep -f local-symbols .config | (				\
@@ -83,7 +87,7 @@ backport-include/backport/autoconf.h: .config Kconfig.versions Kconfig.kernel
 	) > backport-include/backport/autoconf.h
 	@echo " done."
 
-backport-include/backport/backport_path.h: .config Kconfig.versions Kconfig.kernel
+backport-include/backport/backport_path.h: defconfig-i915 Kconfig.versions Kconfig.kernel
 	@echo -n "Building backport-include/backport/backport_path.h ..."
 	@grep -f local-symbols .config | (				\
 		echo "#ifndef COMPAT_BACKPORTED_PATH_INCLUDED"		;\
@@ -107,16 +111,9 @@ modules: backport-include/backport/autoconf.h
 .PHONY: install
 install: modules
 	@$(MAKE) -C $(KLIB_BUILD) M=$(BACKPORT_DIR)			\
-		INSTALL_MOD_DIR=$(KMODDIR) $(KMODPATH_ARG)		\
 		modules_install
-	@./scripts/blacklist.sh $(KLIB)/ $(KLIB)/$(KMODDIR)
-	@./scripts/compress_modules.sh $(KLIB)/$(KMODDIR)
-	@./scripts/check_depmod.sh
-	@/sbin/depmod -a
-	@./scripts/update-initramfs.sh $(KLIB)
 	@echo
 	@echo Your backported driver modules should be installed now.
-	@echo Reboot.
 	@echo
 
 .PHONY: modules_install

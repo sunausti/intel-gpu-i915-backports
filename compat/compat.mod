@@ -1,0 +1,9 @@
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/main.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/backport-5.10.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/backport-5.19.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/slub.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/slab.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/ptrace.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/vmscan.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/swap.o
+/local/sunausti/icase_dessert/build/tmp/work/ivi_dessert_poc-oe-linux/kernel-module-i915-backports/0.1/git/compat/dma-resv.o
